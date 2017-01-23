@@ -218,8 +218,9 @@ excerpt_description: true
 
 # Automatically Excerpt. Not recommand.
 # Please use <!-- more --> in the post to control excerpt accurately.
+#将enable: true 设置首页面中，博客以概览方式查看
 auto_excerpt:
-  enable: false
+  enable: true
   length: 150
 
 # Post meta display settings
