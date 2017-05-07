@@ -22,8 +22,25 @@
       <div id="hypercomments_widget"></div>
     {% elseif theme.gentie_productKey %}
       <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<!--新增-->
+    <% elseif config.gitment_owner %>
+        <div id="container"></div>
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+            var gitment = new Gitment({
+            owner: "{{ config.gitment_owner }}",
+            repo: "{{ config.gitment_repo }}",
+            oauth: {
+                client_id: "{{ config.gitment_client_id }}",
+                client_secret: "{{ config.gitment_client_secret }}",
+            },
+            })
+            gitment.render('container')
+        </script>
+<!--新增-->
     {% elseif theme.youyan_uid %}
-      <div id="uyan_frame"></div>
+        <div id="uyan_frame"></div>
     {% endif %}
   </div>
 {% endif %}
